@@ -1,0 +1,18 @@
+[
+  {
+    "question": "¿Qué es el margen bruto?",
+    "answer": "El margen bruto es la diferencia entre ingresos por ventas y coste de ventas, antes de gastos operativos."
+  },
+  {
+    "question": "¿Qué KPI mide la rapidez de cobro?",
+    "answer": "El DSO (Days Sales Outstanding) mide el número medio de días que tarda una empresa en cobrar sus facturas."
+  },
+  {
+    "question": "¿Qué es una rotura de stock?",
+    "answer": "Una rotura de stock ocurre cuando no hay inventario disponible para cubrir una demanda existente."
+  },
+  {
+    "question": "¿Qué significa ERP?",
+    "answer": "ERP significa Enterprise Resource Planning, un sistema que integra procesos clave de la empresa."
+  }
+]

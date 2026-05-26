@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSGG Examen - IA Empresarial</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Sistemas de Gestión Empresarial</h1>
+    <p>Ollama · Entrenamiento JSON · MCP · IA Agéntica</p>
+    <div class="status" id="ollama-status">Comprobando Ollama...</div>
+  </header>
+
+  <section class="config">
+    <label>Modelo Ollama
+      <select id="model-select">
+        <option value="llama3.1:8b">llama3.1:8b (recomendado)</option>
+        <option value="mistral:7b">mistral:7b</option>
+        <option value="phi3:mini">phi3:mini</option>
+      </select>
+    </label>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="model">1. Modelo Ollama</button>
+    <button class="tab" data-tab="training">2. Entrenamiento JSON</button>
+    <button class="tab" data-tab="mcp">3. MCP MiniSaaS</button>
+    <button class="tab" data-tab="agentic">4. IA Agéntica</button>
+  </nav>
+
+  <main>
+    <section id="panel-model" class="panel active">
+      <h2>Modelo preestablecido + justificación</h2>
+      <label>Prompt
+        <textarea id="model-prompt">Explica en 4 lineas qué es un ERP para una pyme.</textarea>
+      </label>
+      <button class="run-btn" data-action="model">Generar respuesta</button>
+      <div class="output" id="out-model"></div>
+    </section>
+
+    <section id="panel-training" class="panel">
+      <h2>Entrenamiento con JSON (antes / después)</h2>
+      <label>Pregunta de prueba
+        <input id="training-question" type="text"
+          value="¿Qué indicador se usa para saber cuántos días tarda una empresa en cobrar?" />
+      </label>
+      <button class="run-btn" data-action="training">Comparar antes y después</button>
+      <div class="output" id="out-training"></div>
+    </section>
+
+    <section id="panel-mcp" class="panel">
+      <h2>MCP: Humano → Petición → SaaS → Interpretación</h2>
+      <label>Pregunta en lenguaje humano
+        <input id="mcp-question" type="text"
+          value="¿Qué productos tienen poco stock por debajo de 10 unidades?" />
+      </label>
+      <button class="run-btn" data-action="mcp">Ejecutar flujo MCP</button>
+      <div class="output" id="out-mcp"></div>
+    </section>
+
+    <section id="panel-agentic" class="panel">
+      <h2>IA agéntica autónoma</h2>
+      <label>Misión para el agente
+        <textarea id="agentic-mission">Analiza stock y ventas y redacta un informe con 3 recomendaciones prioritarias.</textarea>
+      </label>
+      <button class="run-btn" data-action="agentic">Lanzar agente</button>
+      <p class="hint">Puede tardar 1-3 minutos (varias llamadas al modelo).</p>
+      <div class="output" id="out-agentic"></div>
+    </section>
+  </main>
+
+  <div id="loading" class="loading hidden">
+    <div class="spinner"></div>
+    <p>Procesando con Ollama... la primera vez puede tardar varios minutos.</p>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
